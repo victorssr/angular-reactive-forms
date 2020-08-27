@@ -1,0 +1,47 @@
+<div class="container main-container">
+
+    <form novalidate (ngSubmit)="adicionarUsuario()" [formGroup]="cadastroForm">
+        <div class="row">
+            <div class="col-6">
+                Nome:
+                <input id="nome" class="form-control" placeholder="Nome (requerido)" formControlName="nome" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                Cpf:
+                <input id="nome" class="form-control" placeholder="Cpf (requerido)" formControlName="cpf" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                E-mail:
+                <input id="email" type="email" class="form-control" placeholder="E-mail (requerido)" formControlName="email" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                Senha:
+                <input id="senha" type="password" class="form-control" placeholder="Senha (requerido)" formControlName="senha" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                Confirmar Senha:
+                <input id="confirmacaoSenha" type="password" class="form-control" placeholder="Confirme sua senha (requerido)" formControlName="confirmacaoSenha" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <br />
+                <button class="btn btn-success" type="submit">Concluir cadastro</button>
+            </div>
+        </div>
+    </form>
+
+</div>
