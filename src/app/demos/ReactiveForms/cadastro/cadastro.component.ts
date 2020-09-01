@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Usuario } from './models/usuario';
 
 @Component({
@@ -18,11 +18,11 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit(): void {
     this.cadastroForm = this.fb.group({
-      nome: [''],
-      cpf: [''],
-      email: [''],
-      senha: [''],
-      confirmacaoSenha: [''],
+      nome: ['', [Validators.required]],
+      cpf: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      senha: ['', [Validators.required]],
+      confirmacaoSenha: ['', [Validators.required]],
     });
   }
 
