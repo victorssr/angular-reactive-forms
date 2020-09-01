@@ -17,10 +17,15 @@
             <div class="col-6">
                 Cpf:
                 <input id="cpf" class="form-control" placeholder="Cpf (requerido)" formControlName="cpf"
-                    [ngClass]="{'is-invalid': cadastroForm.get('cpf').errors && cadastroForm.get('cpf').touched}" />
+                    [ngClass]="{'is-invalid': cadastroForm.get('cpf').errors && cadastroForm.get('cpf').touched}" cpf
+                    [textMask]="{mask: masks.cpf.textMask}" />
                 <span class="text-danger"
                     *ngIf="cadastroForm.get('cpf').errors?.required && cadastroForm.get('cpf').touched">
                     Informe o seu CPF
+                </span>
+                <span class="text-danger"
+                    *ngIf="cadastroForm.get('cpf').errors?.cpf && cadastroForm.get('cpf').touched">
+                    Informe um CPF válido
                 </span>
             </div>
         </div>

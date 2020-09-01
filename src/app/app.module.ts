@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CustomFormsModule } from 'ng2-validation';
+import { NgBrazil } from 'ng-brazil' ;
+import { TextMaskModule } from 'angular2-text-mask';
 
 import { registerLocaleData } from "@angular/common";
 import localePt from "@angular/common/locales/pt";
@@ -31,6 +34,9 @@ import { CadastroComponent } from './demos/ReactiveForms/cadastro/cadastro.compo
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    CustomFormsModule,
+    NgBrazil,
+    TextMaskModule,
     [RouterModule.forRoot(rootRouterConfig)]
   ],
   providers: [
