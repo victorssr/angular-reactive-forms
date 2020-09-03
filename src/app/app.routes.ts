@@ -8,7 +8,11 @@ const rootRouterConfig: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'sobre', component: SobreComponent },
-    { path: 'cadastro', component: CadastroComponent }
+    { path: 'cadastro', component: CadastroComponent },
+    {
+        path: 'produto',
+        loadChildren: () =>  import('./demos/arquitetura-componentes/produto.module').then(m => m.ProdutoModule)
+    }
 ];
 
 @NgModule({
@@ -19,4 +23,4 @@ const rootRouterConfig: Routes = [
         RouterModule
     ]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
