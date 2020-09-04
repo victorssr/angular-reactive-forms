@@ -1,9 +1,11 @@
 <div class="container main-container">
     <produto-count [produtos]="produtos"></produto-count>
-    
+
     <div class="row text-center">
-        <produto-detalhe class="col-md-4" *ngFor="let produto of produtos"
-        [produto]="produto"
-        (status)="mudarStatus($event)"></produto-detalhe>
+        <produto-detalhe class="col-md-4" *ngFor="let produto of produtos" [produto]="produto"
+            (status)="mudarStatus($event)">
+            <h5 class="acabou">Ou vá em uma de nossas lojas</h5>
+            <h5 class="corre">Garanta o seu produto já!</h5>
+        </produto-detalhe>
     </div>
 </div>
