@@ -22,4 +22,5 @@ export class ProdutoCountComponent {
 
         return this.produtos.filter((produto) => produto.ativo).length;
     }
+
 }

@@ -2,6 +2,8 @@
     <produto-count [produtos]="produtos"></produto-count>
     
     <div class="row text-center">
-        <produto-detalhe class="col-md-4" *ngFor="let produto of produtos" [produto]="produto"></produto-detalhe>
+        <produto-detalhe class="col-md-4" *ngFor="let produto of produtos"
+        [produto]="produto"
+        (status)="mudarStatus($event)"></produto-detalhe>
     </div>
 </div>
