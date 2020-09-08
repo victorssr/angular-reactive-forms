@@ -17,12 +17,14 @@ import { CadastroComponent } from './demos/ReactiveForms/cadastro/cadastro.compo
 import { NavegacaoModule } from './navegacao/navegacao.module';
 
 import { AppRoutingModule } from './app.routes';
+import { NotFoundComponent } from './navegacao/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SobreComponent,
-    CadastroComponent
+    CadastroComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
