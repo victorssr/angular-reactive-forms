@@ -1,14 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 import { Produto } from '../models/produto';
+import { Observable, fromEvent } from 'rxjs';
+import { ProdutoCountComponent } from '../componentes/produto-count.component';
+import { ProdutoDetalhesComponent } from '../componentes/produto-detalhe.component';
 
 @Component({
   selector: 'app-produto-dashboard',
   templateUrl: './produto-dashboard.component.html',
   styles: []
 })
-export class ProdutoDashboardComponent implements OnInit {
+export class ProdutoDashboardComponent implements OnInit, AfterViewInit {
 
   constructor() { }
+
+  @ViewChild('teste', { static: false }) titulo: ElementRef;
+  @ViewChild(ProdutoCountComponent, { static: false }) produtoCount: ProdutoCountComponent;
+  @ViewChildren(ProdutoDetalhesComponent) produtosDetalhe: QueryList<ProdutoDetalhesComponent>;
 
   produtos: Produto[];
 
@@ -41,6 +48,22 @@ export class ProdutoDashboardComponent implements OnInit {
       valor: 230,
       imagem: 'produtividade.jpg'
     }]
+  }
+
+  ngAfterViewInit(): void {
+    let click: Observable<any> = fromEvent(this.titulo.nativeElement, 'click');
+
+    click.subscribe(() => {
+      console.log("Clicou!");
+      return;
+    });
+
+    console.log("Objetos do contador:", this.produtoCount.produtos);
+
+    this.produtosDetalhe.forEach((produto) => {
+      console.log(produto);
+    });
+
   }
 
   mudarStatus(event: Produto) {
