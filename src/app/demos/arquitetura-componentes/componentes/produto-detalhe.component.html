@@ -30,6 +30,11 @@
                 <i [ngClass]="produto.ativo ? 'fa fa-toggle-on' : 'fa fa-toggle-off'"></i>
                 Botão
             </a>
+            &nbsp;
+            <a class="btn btn-primary" [routerLink]="['editar/', produto.id]">
+                <i class="fa fa-edit"></i>
+                Editar
+            </a>
         </div>
     </div>
 </div>
