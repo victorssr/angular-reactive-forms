@@ -12,14 +12,14 @@ const rootRouterConfig: Routes = [
     { path: 'cadastro', component: CadastroComponent },
     {
         path: 'produto',
-        loadChildren: () =>  import('./demos/arquitetura-componentes/produto.module').then(m => m.ProdutoModule)
+        loadChildren: () => import('./demos/arquitetura-componentes/produto.module').then(m => m.ProdutoModule)
     },
     { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(rootRouterConfig)
+        RouterModule.forRoot(rootRouterConfig, { enableTracing: false })
     ],
     exports: [
         RouterModule
