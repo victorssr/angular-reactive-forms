@@ -3,6 +3,7 @@ import { Produto } from '../models/produto';
 import { Observable, fromEvent } from 'rxjs';
 import { ProdutoCountComponent } from '../componentes/produto-count.component';
 import { ProdutoDetalhesComponent } from '../componentes/produto-detalhe.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-produto-dashboard',
@@ -11,43 +12,17 @@ import { ProdutoDetalhesComponent } from '../componentes/produto-detalhe.compone
 })
 export class ProdutoDashboardComponent implements OnInit, AfterViewInit {
 
-  constructor() { }
+  produtos: Produto[];
 
   @ViewChild('teste', { static: false }) titulo: ElementRef;
   @ViewChild(ProdutoCountComponent, { static: false }) produtoCount: ProdutoCountComponent;
+
   @ViewChildren(ProdutoDetalhesComponent) produtosDetalhe: QueryList<ProdutoDetalhesComponent>;
 
-  produtos: Produto[];
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.produtos = [{
-      id: 1,
-      nome: 'Mouse',
-      ativo: true,
-      valor: 50,
-      imagem: 'performance.jpg'
-    },
-    {
-      id: 2,
-      nome: 'Teclado Mecânico',
-      ativo: true,
-      valor: 250,
-      imagem: 'crossplat.jpg'
-    },
-    {
-      id: 3,
-      nome: 'Monitor FULL HD 25 polegadas',
-      ativo: true,
-      valor: 750,
-      imagem: 'full_dev.jpg'
-    },
-    {
-      id: 4,
-      nome: 'Headset Gamer',
-      ativo: false,
-      valor: 230,
-      imagem: 'produtividade.jpg'
-    }]
+    this.produtos = this.route.snapshot.data['produtos'];
   }
 
   ngAfterViewInit(): void {

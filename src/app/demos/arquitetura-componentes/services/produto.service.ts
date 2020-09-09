@@ -6,7 +6,7 @@ export class ProdutoService {
 
     produtos: Produto[];
 
-    constructor () {
+    constructor() {
         this.produtos = [{
             id: 1,
             nome: 'Mouse',
@@ -37,7 +37,11 @@ export class ProdutoService {
         }];
     }
 
-    obterTodos(): Produto[] {
+    obterTodos(status: string): Produto[] {
+        if (status === "ativos") {
+            return this.produtos.filter(p => p.ativo == true);
+        }
+
         return this.produtos;
     }
 
