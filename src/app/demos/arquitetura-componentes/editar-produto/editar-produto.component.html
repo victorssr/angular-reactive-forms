@@ -29,7 +29,7 @@
                     </div>
 
                     <div class="card-footer">
-                        <a class="btn btn-success" [routerLink]="['editar/', produto.id]">
+                        <a class="btn btn-success" [routerLink]="['editar/', produto.id]" (click)="salvar()">
                             <i class="fa fa-save mr-2"></i>
                             Salvar altrações
                         </a>
