@@ -23,6 +23,7 @@ import { CadastroGuard } from './services/cadastro.guard';
 import { FilmesComponent } from './demos/pipe/filmes/filmes.component';
 import { FileSizePipe } from './demos/pipe/filmes/filesize.pipe';
 import { ImageFormatterPipe } from './demos/pipe/filmes/image.pipe';
+import { BarModule } from './demos/bar-di-zones/bar.module';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ImageFormatterPipe } from './demos/pipe/filmes/image.pipe';
     NgBrazil,
     TextMaskModule,
     NavegacaoModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BarModule
   ],
   providers: [
     AuthAppGuard,

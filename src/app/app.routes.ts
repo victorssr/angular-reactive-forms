@@ -7,6 +7,7 @@ import { NotFoundComponent } from './navegacao/not-found/not-found.component';
 import { AuthAppGuard } from './services/app.guard';
 import { CadastroGuard } from './services/cadastro.guard';
 import { FilmesComponent } from './demos/pipe/filmes/filmes.component';
+import { BarDiZonesComponent } from './demos/bar-di-zones/bar-di-zones.component';
 
 const rootRouterConfig: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -19,6 +20,7 @@ const rootRouterConfig: Routes = [
         canLoad: [AuthAppGuard],
         canActivate: [AuthAppGuard]
     },
+    { path: 'bar', component: BarDiZonesComponent },
     { path: 'filmes', component: FilmesComponent },
     { path: '**', component: NotFoundComponent }
 ];
