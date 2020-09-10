@@ -4,6 +4,7 @@ import { SobreComponent } from './institucional/sobre/sobre.component';
 import { CadastroComponent } from './demos/ReactiveForms/cadastro/cadastro.component';
 import { NgModule } from '@angular/core';
 import { NotFoundComponent } from './navegacao/not-found/not-found.component';
+import { AuthAppGuard } from './services/app.guard';
 
 const rootRouterConfig: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -12,7 +13,9 @@ const rootRouterConfig: Routes = [
     { path: 'cadastro', component: CadastroComponent },
     {
         path: 'produto',
-        loadChildren: () => import('./demos/arquitetura-componentes/produto.module').then(m => m.ProdutoModule)
+        loadChildren: () => import('./demos/arquitetura-componentes/produto.module').then(m => m.ProdutoModule),
+        canLoad: [AuthAppGuard],
+        canActivate: [AuthAppGuard]
     },
     { path: '**', component: NotFoundComponent }
 ];

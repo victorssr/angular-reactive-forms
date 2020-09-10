@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
-import { NgBrazil } from 'ng-brazil' ;
+import { NgBrazil } from 'ng-brazil';
 import { TextMaskModule } from 'angular2-text-mask';
 
 import { registerLocaleData } from "@angular/common";
@@ -18,6 +18,7 @@ import { NavegacaoModule } from './navegacao/navegacao.module';
 
 import { AppRoutingModule } from './app.routes';
 import { NotFoundComponent } from './navegacao/not-found/not-found.component';
+import { AuthAppGuard } from './services/app.guard';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { NotFoundComponent } from './navegacao/not-found/not-found.component';
     AppRoutingModule
   ],
   providers: [
+    AuthAppGuard,
     { provide: APP_BASE_HREF, useValue: '/' }
   ],
   bootstrap: [AppComponent]
