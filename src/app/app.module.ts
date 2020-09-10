@@ -21,6 +21,7 @@ import { NotFoundComponent } from './navegacao/not-found/not-found.component';
 import { AuthAppGuard } from './services/app.guard';
 import { CadastroGuard } from './services/cadastro.guard';
 import { FilmesComponent } from './demos/pipe/filmes/filmes.component';
+import { FileSizePipe } from './demos/pipe/filmes/filesize.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FilmesComponent } from './demos/pipe/filmes/filmes.component';
     SobreComponent,
     CadastroComponent,
     NotFoundComponent,
-    FilmesComponent
+    FilmesComponent,
+    FileSizePipe
   ],
   imports: [
     BrowserModule,

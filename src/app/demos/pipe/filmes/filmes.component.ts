@@ -20,7 +20,7 @@ export class FilmesComponent implements OnInit {
         dataLancamento: new Date('12/07/1994'),
         valor: 150.00,
         imagem: 'crossplat.jpg',
-        tamanho: '543123'
+        tamanho: '1567465423'
       },
       {
         nome: 'O Poderoso Chefão',
