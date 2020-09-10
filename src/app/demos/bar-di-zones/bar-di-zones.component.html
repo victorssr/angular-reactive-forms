@@ -7,4 +7,18 @@
         <p>Bebidas do bar (useExisting): {{ barBebida2 }}</p>
         <p>Unidade Config (Service): <b>{{ unidadeConfig }}</b></p>
     </div>
+    <hr>
+    <div>
+        <h3>Progresso: {{ progress }}%</h3>
+        <br>
+        <button class="btn btn-primary" (click)="processWithinAngularZone()">
+            <i class="fa fa-sign-in-alt"></i>
+            Executar dentro do Angular
+        </button>
+        &nbsp;
+        <button class="btn btn-success" (click)="processOutsideOfAngularZone()">
+            <i class="fa fa-sign-out-alt"></i>
+            Executar fora do Angular
+        </button>
+    </div>
 </div>
