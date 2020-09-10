@@ -20,13 +20,15 @@ import { AppRoutingModule } from './app.routes';
 import { NotFoundComponent } from './navegacao/not-found/not-found.component';
 import { AuthAppGuard } from './services/app.guard';
 import { CadastroGuard } from './services/cadastro.guard';
+import { FilmesComponent } from './demos/pipe/filmes/filmes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SobreComponent,
     CadastroComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FilmesComponent
   ],
   imports: [
     BrowserModule,

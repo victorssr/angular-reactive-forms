@@ -7,26 +7,33 @@ import { ItemMenu } from './models/menu';
 })
 export class MenuComponent {
 
-  itensMenu: ItemMenu[] = [{
-    name: 'Home',
-    link: '/home',
-    admin: false,
-    exact: true
-  }, {
-    name: 'Cadastro',
-    link: '/cadastro',
-    admin: true,
-    exact: true
-  }, {
-    name: 'Sobre',
-    link: '/sobre',
-    admin: false,
-    exact: true
-  }, {
-    name: 'Produto',
-    link: '/produto',
-    admin: false,
-    exact: false
-  }];
+  itensMenu: ItemMenu[] = [
+    {
+      name: 'Home',
+      link: '/home',
+      admin: false,
+      exact: true
+    }, {
+      name: 'Cadastro',
+      link: '/cadastro',
+      admin: true,
+      exact: true
+    }, {
+      name: 'Sobre',
+      link: '/sobre',
+      admin: false,
+      exact: true
+    }, {
+      name: 'Produto',
+      link: '/produto',
+      admin: false,
+      exact: false
+    }, {
+      name: 'Filmes',
+      link: '/filmes',
+      admin: false,
+      exact: false
+    }
+  ];
 
 }
