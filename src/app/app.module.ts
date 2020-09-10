@@ -19,6 +19,7 @@ import { NavegacaoModule } from './navegacao/navegacao.module';
 import { AppRoutingModule } from './app.routes';
 import { NotFoundComponent } from './navegacao/not-found/not-found.component';
 import { AuthAppGuard } from './services/app.guard';
+import { CadastroGuard } from './services/cadastro.guard';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { AuthAppGuard } from './services/app.guard';
   ],
   providers: [
     AuthAppGuard,
+    CadastroGuard,
     { provide: APP_BASE_HREF, useValue: '/' }
   ],
   bootstrap: [AppComponent]

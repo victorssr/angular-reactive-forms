@@ -5,12 +5,13 @@ import { CadastroComponent } from './demos/ReactiveForms/cadastro/cadastro.compo
 import { NgModule } from '@angular/core';
 import { NotFoundComponent } from './navegacao/not-found/not-found.component';
 import { AuthAppGuard } from './services/app.guard';
+import { CadastroGuard } from './services/cadastro.guard';
 
 const rootRouterConfig: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'sobre', component: SobreComponent },
-    { path: 'cadastro', component: CadastroComponent },
+    { path: 'cadastro', component: CadastroComponent, canDeactivate: [CadastroGuard] },
     {
         path: 'produto',
         loadChildren: () => import('./demos/arquitetura-componentes/produto.module').then(m => m.ProdutoModule),
