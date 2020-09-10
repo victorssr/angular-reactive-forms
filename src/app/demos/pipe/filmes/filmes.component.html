@@ -12,7 +12,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let filme of filmes">
-                <td><img [src]="filme.imagem" syle="paddin-bottom: 5px;" /></td>
+                <td><img [src]="filme.imagem" syle="paddin-bottom: 5px;" width="100px" /></td>
                 <td>{{ filme.nome | titlecase }}</td>
                 <td>{{ filme.dataLancamento | date:'dd/MM/yyyy' }}</td>
                 <td>{{ filme.valor | currency:'BRL':'symbol':'1.2-2':'pt' }}</td>

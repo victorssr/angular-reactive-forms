@@ -22,6 +22,7 @@ import { AuthAppGuard } from './services/app.guard';
 import { CadastroGuard } from './services/cadastro.guard';
 import { FilmesComponent } from './demos/pipe/filmes/filmes.component';
 import { FileSizePipe } from './demos/pipe/filmes/filesize.pipe';
+import { ImageFormatterPipe } from './demos/pipe/filmes/image.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FileSizePipe } from './demos/pipe/filmes/filesize.pipe';
     CadastroComponent,
     NotFoundComponent,
     FilmesComponent,
-    FileSizePipe
+    FileSizePipe,
+    ImageFormatterPipe
   ],
   imports: [
     BrowserModule,

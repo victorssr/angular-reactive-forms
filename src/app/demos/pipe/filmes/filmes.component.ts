@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Filme } from './models/filme';
+import { ImageFormatterPipe } from './image.pipe';
 
 @Component({
   selector: 'app-filmes',
   templateUrl: './filmes.component.html',
-  styles: [
+  providers: [
+    ImageFormatterPipe
   ]
 })
 export class FilmesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private formatImage: ImageFormatterPipe) { }
 
   filmes: Filme[];
 
@@ -43,7 +45,11 @@ export class FilmesComponent implements OnInit {
         imagem: 'produtividade.jpg',
         tamanho: '987615321'
       }
-    ]
+    ];
+
+    this.filmes.forEach(filme => {
+      filme.imagem = this.formatImage.transform(filme.imagem, 'default', true);
+    });
   }
 
 }
