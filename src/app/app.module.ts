@@ -45,7 +45,10 @@ import { BarModule } from './demos/bar-di-zones/bar.module';
     TextMaskModule,
     NavegacaoModule,
     AppRoutingModule,
-    BarModule
+    BarModule.forRoot({
+      unidadeId: 1234,
+      unidadeToken: 'A901LKASDO0P21LDQ9021M'
+    })
   ],
   providers: [
     AuthAppGuard,
