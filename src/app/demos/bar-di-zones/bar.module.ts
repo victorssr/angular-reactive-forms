@@ -13,9 +13,6 @@ import { BarUnidadeConfig, BAR_UNIDADE_CONFIG } from "./bar.config";
     ],
     exports: [
         BarDiZonesComponent
-    ],
-    providers: [
-        BarService
     ]
 })
 export class BarModule {
