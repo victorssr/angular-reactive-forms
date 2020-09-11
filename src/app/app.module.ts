@@ -24,6 +24,7 @@ import { FilmesComponent } from './demos/pipe/filmes/filmes.component';
 import { FileSizePipe } from './demos/pipe/filmes/filesize.pipe';
 import { ImageFormatterPipe } from './demos/pipe/filmes/image.pipe';
 import { BarModule } from './demos/bar-di-zones/bar.module';
+import { TodoModule } from './demos/todo-list/todo.module';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { BarModule } from './demos/bar-di-zones/bar.module';
     BarModule.forRoot({
       unidadeId: 1234,
       unidadeToken: 'A901LKASDO0P21LDQ9021M'
-    })
+    }),
+    TodoModule
   ],
   providers: [
     AuthAppGuard,
