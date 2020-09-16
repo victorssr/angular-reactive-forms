@@ -8,6 +8,8 @@ import { Task } from '../../models/task';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent {
+  
   @Input()
   list: Task[];
+
 }
