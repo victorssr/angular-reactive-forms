@@ -9,6 +9,7 @@ import { CadastroGuard } from './services/cadastro.guard';
 import { FilmesComponent } from './demos/pipe/filmes/filmes.component';
 import { BarDiZonesComponent } from './demos/bar-di-zones/bar-di-zones.component';
 import { TodoComponent } from './demos/todo-list/todo.component';
+import { ContadorComponent } from './demos/contador/contador.component';
 
 const rootRouterConfig: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -24,6 +25,7 @@ const rootRouterConfig: Routes = [
     { path: 'bar', component: BarDiZonesComponent },
     { path: 'filmes', component: FilmesComponent },
     { path: 'todo', component: TodoComponent },
+    { path: 'contador', component: ContadorComponent },
     { path: '**', component: NotFoundComponent }
 ];
 

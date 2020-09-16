@@ -43,6 +43,11 @@ export class MenuComponent {
       link: '/todo',
       admin: false,
       exact: false
+    }, {
+      name: 'Contador',
+      link: '/contador',
+      admin: false,
+      exact: false
     }
   ];
 

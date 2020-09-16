@@ -25,6 +25,7 @@ import { FileSizePipe } from './demos/pipe/filmes/filesize.pipe';
 import { ImageFormatterPipe } from './demos/pipe/filmes/image.pipe';
 import { BarModule } from './demos/bar-di-zones/bar.module';
 import { TodoModule } from './demos/todo-list/todo.module';
+import { ContadorComponent } from './demos/contador/contador.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { TodoModule } from './demos/todo-list/todo.module';
     NotFoundComponent,
     FilmesComponent,
     FileSizePipe,
-    ImageFormatterPipe
+    ImageFormatterPipe,
+    ContadorComponent
   ],
   imports: [
     BrowserModule,

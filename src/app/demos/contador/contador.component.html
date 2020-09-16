@@ -1,0 +1,11 @@
+<div class="container main-container">
+    <h3>Contador</h3>
+    Conta atual: {{ contador }}
+    <hr>
+    <button class="btn btn-warning" style="margin-right: 10px;" [disabled]="contador == minValue" (click)="decrementar()">
+        <i class="fa fa-minus"></i>
+    </button>
+    <button class="btn btn-success" [disabled]="contador == maxValue" (click)="incrementar()">
+        <i class="fa fa-plus"></i>
+    </button>
+</div>
