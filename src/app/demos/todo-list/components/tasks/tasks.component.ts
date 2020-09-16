@@ -1,9 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { TasksService } from '../../todo.service';
 import { Observable, Subscription } from 'rxjs';
 import { Task } from '../../models/task';
 import { Store } from '../../todo.store';
 import { map } from 'rxjs/operators';
+import { TitleCasePipe } from '@angular/common';
 
 @Component({
   selector: 'tasks',
@@ -13,10 +14,15 @@ import { map } from 'rxjs/operators';
 })
 export class TasksComponent implements OnInit, OnDestroy {
 
+  txtTarefa: string;
   todoList$: Observable<Task[]>;
   subscription: Subscription;
 
-  constructor(private tasksService: TasksService, private store: Store) { }
+  constructor(
+    private tasksService: TasksService,
+    private store: Store,
+    private titleCasePipe: TitleCasePipe
+  ) { }
 
   ngOnInit(): void {
     this.subscription = this.tasksService.getTodoList$.subscribe();
@@ -29,4 +35,12 @@ export class TasksComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+  onToggle(event) {
+    this.tasksService.toggle(event);
+  }
+
+  novaTarefa() {
+    this.tasksService.novaTarefa(this.titleCasePipe.transform(this.txtTarefa));
+    this.txtTarefa = "";
+  }
 }

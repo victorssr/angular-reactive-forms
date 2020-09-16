@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
+import { CommonModule, TitleCasePipe } from "@angular/common";
 import { TodoComponent } from "./todo.component";
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { HttpClientModule } from "@angular/common/http";
@@ -8,12 +8,14 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { TasksFinalizadasComponent } from './components/tasks-finalizadas/tasks-finalizadas.component';
 import { TasksIniciadasComponent } from './components/tasks-iniciadas/tasks-iniciadas.component';
 import { Store } from "./todo.store";
+import { FormsModule } from "@angular/forms";
 
 
 @NgModule({
     imports: [
         CommonModule,
-        HttpClientModule
+        HttpClientModule,
+        FormsModule
     ],
     declarations: [
         TodoComponent,
@@ -31,7 +33,8 @@ import { Store } from "./todo.store";
     ],
     providers: [
         TasksService,
-        Store
+        Store,
+        TitleCasePipe
     ]
 })
 export class TodoModule { }

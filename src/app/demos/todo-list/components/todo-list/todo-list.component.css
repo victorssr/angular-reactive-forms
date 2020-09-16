@@ -60,3 +60,7 @@
 .task-list li span {
     color: #807d82;
 }
+
+.action {
+    padding: 10px;
+}

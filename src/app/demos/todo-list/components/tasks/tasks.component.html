@@ -1,3 +1,7 @@
+<div style="margin-bottom: 10px;">
+    <input placeholder="Nova tarefa (Pressione 'Enter' para adicionar)" class="form-control"
+        [(ngModel)]="txtTarefa" (keydown.enter)="novaTarefa()">
+</div>
 <div class="tasks">
-    <todo-list [list]="todoList$ | async">Tarefas</todo-list>
+    <todo-list [list]="todoList$ | async" (toggle)="onToggle($event)">Tarefas</todo-list>
 </div>
