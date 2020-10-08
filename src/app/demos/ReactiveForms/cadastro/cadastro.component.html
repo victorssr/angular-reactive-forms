@@ -1,5 +1,5 @@
 <div class="container main-container">
-
+    <h1>Demo Cadastro</h1>
     <form novalidate (ngSubmit)="adicionarUsuario()" [formGroup]="cadastroForm">
         <div class="row">
             <div class="col-6">
@@ -59,7 +59,7 @@
         <div class="row">
             <div class="col-6">
                 <br />
-                <button class="btn btn-success" [disabled]="!cadastroForm.valid" type="submit">
+                <button id="btnConcluir" class="btn btn-success" [disabled]="!cadastroForm.valid" type="submit">
                     Concluir cadastro
                 </button>
             </div>
